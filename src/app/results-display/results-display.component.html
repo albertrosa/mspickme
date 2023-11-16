@@ -1,0 +1,27 @@
+
+
+
+
+<div class="row pt-5">
+    <button class="btn btn-lg btn-primary col-2" (click)="showTable = !showTable">Show Results</button>
+</div>
+
+
+<div class="row pt-1" *ngIf="!showTable">
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Picked</th>
+        <th>Participated</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let user of picked">
+        <tr>
+            <td>{{user.name}}</td>
+            <td>{{user.count}}</td>
+            <td>{{user.answered}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>

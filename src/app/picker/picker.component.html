@@ -1,9 +1,27 @@
 
 <div class="row">
+  <h1>{{team}} Be Ready</h1>
+</div>
+<div class="row  align-items-center"  *ngIf="!empty">
   <div class="col-auto">
-    <h1>{{team}} Be Ready</h1>
-
     <button (click)="pick()" class="btn btn-success btn-lg" >Pick</button>
+  </div>
+  <div class="col-auto form-check">
+    <input type="checkbox" class="checkbox form-check-input" id="allowdup" (click)="this.onCheckboxChange()"/> 
+    <label for="allowdup">Allow Duplicate picks</label>
+  </div>    
+</div>
+<div class="row align-items-center"  *ngIf="empty">
+  <h3>No More Choices Left!</h3>
+  <div class="col-auto">
+    <button (click)="resetDupes()" class="btn btn-danger btn-lg" >Reset</button>
+  </div>
+</div>
+
+
+
+<div class="row pt-5">
+  <div class="col-8">
     <div *ngIf=selectedName>
       <h5>Selected Name</h5>
       <h1>{{ selectedName }}</h1>
@@ -12,6 +30,6 @@
       <div class="firework firework_too_close"></div>
       <div class="firework firework_close"></div>
       <div class="firework"></div>
-    </div>
+    </div>    
   </div>
 </div>

@@ -4,12 +4,14 @@ import { RouterOutlet } from '@angular/router';
 import { PickerComponent } from './picker/picker.component';
 import { EditorComponent } from './editor/editor.component';
 import { ClassNamesService } from './class-names.service';
+import { NameCount, PickerTrackerService } from './picker-tracker.service';
 import { TeamselectComponent } from './teamselect/teamselect.component';
+import { ResultsDisplayComponent } from './results-display/results-display.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, PickerComponent, EditorComponent, TeamselectComponent],
+  imports: [CommonModule, RouterOutlet, PickerComponent, EditorComponent, TeamselectComponent, ResultsDisplayComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -18,12 +20,13 @@ export class AppComponent implements OnInit{
 
   names:string[] = [];
   teams:string[] = [];
+  picked: NameCount[] = [];
   selectedName = "";
   selectedTeam = ""
   noSelectedName = "Be Prepared!";
   showEditer = false;
 
-  constructor(private nameService: ClassNamesService) {}  
+  constructor(private nameService: ClassNamesService,  private pickerTracker: PickerTrackerService) {}  
 
   ngOnInit(): void {
     this.teams = this.nameService.teams;
@@ -34,6 +37,10 @@ export class AppComponent implements OnInit{
   pickFromTeam(teamname:string):void{
     this.selectedTeam= teamname;    
     this.names = this.nameService.getNames(this.selectedTeam);
+  }
+
+  updateResults(updated:any):void {
+    this.picked = this.pickerTracker.picked;
   }
 
   

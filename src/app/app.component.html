@@ -15,12 +15,12 @@
 <app-editor [names]=this.names (addNameEvent)="addName($event)" (removeNameEvent)="removeName($event)" [showedit]="showEditer" [hideButton]="true"></app-editor>
 
 
-<app-picker [names]=this.names [team]=this.selectedTeam></app-picker>
+<app-picker [names]=this.names [team]=this.selectedTeam (pickedEvent)="updateResults($event)" ></app-picker>
 
-
+<app-results-display [team]=this.selectedTeam [names]=this.names [picked]=this.picked></app-results-display>
 
 
 
 <footer>
-  <p>Game Over!</p>
+<div> &copy; Albert Rosa 2023</div>
 </footer>
