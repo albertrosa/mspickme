@@ -1,0 +1,17 @@
+
+<div class="row">
+  <div class="col-auto">
+    <h1>{{team}} Be Ready</h1>
+
+    <button (click)="pick()" class="btn btn-success btn-lg" >Pick</button>
+    <div *ngIf=selectedName>
+      <h5>Selected Name</h5>
+      <h1>{{ selectedName }}</h1>
+      <button (click)="repick()" class="btn btn-warning btn-lg" >Pick Another</button>
+
+      <div class="firework firework_too_close"></div>
+      <div class="firework firework_close"></div>
+      <div class="firework"></div>
+    </div>
+  </div>
+</div>

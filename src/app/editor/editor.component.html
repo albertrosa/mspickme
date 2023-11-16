@@ -1,0 +1,40 @@
+<div class="row" *ngIf="!hideButton">
+  <div class="col-1">
+    <button (click)="showedit = !showedit" class="btn btn-warning btn-sm">Edit Lists</button>
+  </div>
+  
+  
+</div>
+
+
+<div class="row pt-3" *ngIf="showedit">
+  <div class="col-4">
+  <ul *ngFor="let name of names">
+    <li>{{ name }}
+      <button class="btn btn-danger btn-sm" type="button" (click)="removeName(name)">Remove</button>
+    </li>
+  </ul>
+</div>
+
+<div class="col-8">
+  
+  <div class="row pt-3">
+
+    <div class="col-6">
+      <label for="newName">Name(s): </label>
+      <textarea #newName id="newName" type="text" class="form-control" rows="10" cols="25"></textarea>
+    </div>
+    
+    <div class="col-2 pt-4">
+      <div class="row">
+      <button class="btn btn-success" type="button" (click)="addName(newName)">Add</button>
+    </div>
+    <div class="row pt-4">
+      <button class="btn btn-danger" type="button" (click)="reset(newName)">Clear</button>
+    </div>
+    </div>    
+
+  </div>
+</div>
+
+</div>
