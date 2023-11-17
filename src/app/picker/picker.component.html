@@ -1,10 +1,10 @@
 
 <div class="row">
-  <h1>{{team}} Be Ready</h1>
+  <h1>Group {{team}} Be Ready</h1>
 </div>
 <div class="row  align-items-center"  *ngIf="!empty">
   <div class="col-auto">
-    <button (click)="pick()" class="btn btn-success btn-lg" >Pick</button>
+    <button (click)="pick()" class="btn btn-success btn-lg" > <i class="bi bi-hand-index-thumb-fill"></i></button>
   </div>
   <div class="col-auto form-check">
     <input type="checkbox" class="checkbox form-check-input" id="allowdup" (click)="this.onCheckboxChange()"/> 

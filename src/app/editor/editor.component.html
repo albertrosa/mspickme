@@ -1,6 +1,6 @@
 <div class="row" *ngIf="!hideButton">
   <div class="col-1">
-    <button (click)="showedit = !showedit" class="btn btn-warning btn-sm">Edit Lists</button>
+    <button (click)="showedit = !showedit" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></button>
   </div>
   
   
@@ -8,12 +8,12 @@
 
 
 <div class="row pt-3" *ngIf="showedit">
-  <div class="col-4">
-  <ul *ngFor="let name of names">
-    <li>{{ name }}
-      <button class="btn btn-danger btn-sm" type="button" (click)="removeName(name)">Remove</button>
-    </li>
-  </ul>
+  <div class="col-4">    
+  <table class="table table-striped table-hover ">
+    <tbody>
+    <tr *ngFor="let name of names" ><td>{{ name }}</td><td><button class="btn btn-danger btn-sm" type="button" (click)="removeName(name)"><i class="bi bi-trash3-fill"></i></button></td></tr>
+  </tbody>
+  </table>
 </div>
 
 <div class="col-8">
@@ -27,10 +27,10 @@
     
     <div class="col-2 pt-4">
       <div class="row">
-      <button class="btn btn-success" type="button" (click)="addName(newName)">Add</button>
+      <button class="btn btn-success" type="button" (click)="addName(newName)"><i class="bi bi-person-fill-add"></i></button>
     </div>
     <div class="row pt-4">
-      <button class="btn btn-danger" type="button" (click)="reset(newName)">Clear</button>
+      <button class="btn btn-danger" type="button" (click)="reset(newName)"><i class="bi bi-arrow-clockwise"></i></button>
     </div>
     </div>    
 

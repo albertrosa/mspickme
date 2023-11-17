@@ -2,11 +2,12 @@
 <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
   
   <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1">Name Picker</span>
+    <span class="navbar-brand mb-0 h1">Ms. PickMe</span>
 
     <app-teamselect [teams]=this.teams (teamSelectedEvent)="pickFromTeam($event)" ></app-teamselect>    
 
-    <button (click)="showEditer = !showEditer" class="btn btn-warning">Edit Team List</button>
+    <button (click)="showEditer = !showEditer" class="btn btn-warning"><i class="bi bi-pencil"></i>
+    </button>
     
   </div>
 

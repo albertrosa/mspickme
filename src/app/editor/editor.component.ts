@@ -22,7 +22,7 @@ export class EditorComponent implements OnInit{
   @Input() hideButton = false;
 
   ngOnInit(): void {
-    this.names = this.nameService.names;
+    this.names = this.nameService.names
   }
 
   addToStorage(name:string) {

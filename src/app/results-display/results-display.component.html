@@ -3,12 +3,12 @@
 
 
 <div class="row pt-5">
-    <button class="btn btn-lg btn-primary col-2" (click)="showTable = !showTable">Show Results</button>
+    <button class="btn btn-lg btn-primary" (click)="showTable = !showTable"><i class="bi bi-file-spreadsheet-fill"></i> Results</button>
 </div>
 
 
 <div class="row pt-1" *ngIf="!showTable">
-<table class="table">
+<table class="table  table-striped table-hover ">
     <thead>
     <tr>
         <th>Name</th>
@@ -16,11 +16,11 @@
         <th>Participated</th>
     </tr>
     </thead>
-    <tbody *ngFor="let user of picked">
-        <tr>
+    <tbody>
+        <tr  *ngFor="let user of picked">
             <td>{{user.name}}</td>
-            <td>{{user.count}}</td>
-            <td>{{user.answered}}</td>
+            <td><i class="bi bi-person-raised-hand"></i> {{user.count}}</td>
+            <td><i class="bi bi-check-circle" *ngIf="user.answered"></i> <i class="bi bi-x-circle" *ngIf="!user.answered"></i> {{user.answered}}</td>
         </tr>
     </tbody>
 </table>

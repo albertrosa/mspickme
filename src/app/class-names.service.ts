@@ -5,14 +5,14 @@ import { Injectable } from '@angular/core';
 })
 export class ClassNamesService {
 
-  teams:string[] = ["Team 1", "Team 2","Team 3","Team 4", "Team 5",]
+  teams:string[] = ["1", "2","3","4", "5",]
   names:string[] = [];
   memory = [
-    {"team": "Team 1", "names": ['Alice', 'Bob', 'Charlie'] },
-    {"team": "Team 2", "names": ['Alice', 'Bob', 'Charlie'] },
-    {"team": "Team 3", "names": ['Alice', 'Bob', 'Charlie'] },
-    {"team": "Team 4", "names": ['Alice', 'Bob', 'Charlie'] },
-    {"team": "Team 5", "names": ['Alice', 'Bob', 'Charlie'] },
+    {"team": "1", "names": ['Alice', 'Bob', 'Charlie'] },
+    {"team": "2", "names": ['Alice', 'Bob', 'Charlie'] },
+    {"team": "3", "names": ['Alice', 'Bob', 'Charlie'] },
+    {"team": "4", "names": ['Alice', 'Bob', 'Charlie'] },
+    {"team": "5", "names": ['Alice', 'Bob', 'Charlie'] },
 ]
 
   constructor() {}
